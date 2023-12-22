@@ -12,7 +12,7 @@ namespace DTNExercise
         {
             InitializeComponent();
             UpdateInstructionsText();
-            defaultStatusForeColor = statusTextBox.ForeColor;
+            SetDefaultStatusForeColor();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -118,6 +118,11 @@ namespace DTNExercise
         private void UpdateInstructionsText()
         {
             instructionsTextbox.Text = Constants.INSTRUCTIONS;
+        }
+
+        private void SetDefaultStatusForeColor()
+        {
+            defaultStatusForeColor = statusTextBox.ForeColor;
         }
     }
 }
