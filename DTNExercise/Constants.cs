@@ -17,5 +17,8 @@ namespace DTNExercise
         public static string RESOURCES_FOLDER_NAME = "Resources";
         public static string ASSETS_FILE_NAME = "assets.json";
         public static string LIGHTNING_FILE_NAME = "lightning.json";
+        public static string INSTRUCTIONS = "1. Make sure the assets.json and lightning.json files are in the Resources folder." 
+                                           + Environment.NewLine + Environment.NewLine
+                                           + "2. Click the Generate button.";
     }
 }

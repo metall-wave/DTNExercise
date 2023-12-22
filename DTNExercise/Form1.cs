@@ -12,6 +12,7 @@ namespace DTNExercise
         public MainApplicationForm()
         {
             InitializeComponent();
+            UpdateInstructionsText();
             defaultStatusForeColor = statusTextBox.ForeColor;
         }
 
@@ -46,6 +47,9 @@ namespace DTNExercise
 
                     if (assetWithMatchingQuadKey != null)
                     {
+                        //Check to see if a strike has occurred for a particular asset
+                        //A time complexity of O(n). This means that the time it takes to check if an item is in a List
+                        //increases linearly with the number of items already in the List.
                         if (!previousLightningQuadKeys.Contains(lightningQuadKey))
                         {
                             string resultItem = $"lightning alert for {assetWithMatchingQuadKey.assetOwner}:{assetWithMatchingQuadKey.assetName}";
@@ -63,7 +67,7 @@ namespace DTNExercise
             catch (Exception ex)
             {
                 ShowStatus($"{Constants.ERROR_MESSAGE}:{Environment.NewLine}{ex.Message}",
-                    StatusType.Success);
+                    StatusType.Error);
             }
         }
 
@@ -107,6 +111,14 @@ namespace DTNExercise
                     statusTextBox.ForeColor = Color.Red;
                     break;
             }
+        }
+
+        /// <summary>
+        /// Updates the instructions text box
+        /// </summary>
+        private void UpdateInstructionsText()
+        {
+            instructionsTextbox.Text = Constants.INSTRUCTIONS;
         }
     }
 }

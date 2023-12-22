@@ -33,6 +33,8 @@
             this.statusLabel = new System.Windows.Forms.Label();
             this.statusTextBox = new System.Windows.Forms.TextBox();
             this.authorLabel = new System.Windows.Forms.Label();
+            this.instructionsTextbox = new System.Windows.Forms.TextBox();
+            this.instructionLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // reportListBox
@@ -81,11 +83,31 @@
             this.authorLabel.TabIndex = 4;
             this.authorLabel.Text = "Author: Monteagudo Jeffrey";
             // 
+            // instructionsTextbox
+            // 
+            this.instructionsTextbox.Location = new System.Drawing.Point(12, 235);
+            this.instructionsTextbox.Multiline = true;
+            this.instructionsTextbox.Name = "instructionsTextbox";
+            this.instructionsTextbox.ReadOnly = true;
+            this.instructionsTextbox.Size = new System.Drawing.Size(169, 140);
+            this.instructionsTextbox.TabIndex = 5;
+            // 
+            // instructionLabel
+            // 
+            this.instructionLabel.AutoSize = true;
+            this.instructionLabel.Location = new System.Drawing.Point(12, 217);
+            this.instructionLabel.Name = "instructionLabel";
+            this.instructionLabel.Size = new System.Drawing.Size(69, 15);
+            this.instructionLabel.TabIndex = 6;
+            this.instructionLabel.Text = "Instructions";
+            // 
             // MainApplicationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(506, 426);
+            this.Controls.Add(this.instructionLabel);
+            this.Controls.Add(this.instructionsTextbox);
             this.Controls.Add(this.authorLabel);
             this.Controls.Add(this.statusTextBox);
             this.Controls.Add(this.statusLabel);
@@ -105,5 +127,7 @@
         private Label statusLabel;
         private TextBox statusTextBox;
         private Label authorLabel;
+        private TextBox instructionsTextbox;
+        private Label instructionLabel;
     }
 }
