@@ -1,12 +1,4 @@
-﻿
-//------------------------------------------------------------------------------  
-// <copyright company="Microsoft">  
-//     Copyright (c) 2006-2009 Microsoft Corporation.  All rights reserved.  
-// </copyright>  
-//------------------------------------------------------------------------------  
-
-using DTNExercise.Microsoft.MapPoint;
-using System.Text;
+﻿using DTNExercise.Microsoft.MapPoint;
 
 namespace DTNExercise.Services
 {

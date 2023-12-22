@@ -1,7 +1,6 @@
 using DTNExercise.Enums;
 using DTNExercise.Models;
 using DTNExercise.Services;
-using Newtonsoft.Json;
 
 namespace DTNExercise
 {
