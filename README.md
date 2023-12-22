@@ -25,5 +25,5 @@
 
 
 ### Additional answers:
-The time complexity for determining if a strike has occurred for a particular asset is O(n)
-To speed the app up for scaleability, I would implement caching, so that unnecessary information isn't processed everytime a user runs it.
+- The time complexity for determining if a strike has occurred for a particular asset is O(n)
+- To speed the app up for scaleability, I would implement caching, so that unnecessary information isn't processed everytime a user runs it.
