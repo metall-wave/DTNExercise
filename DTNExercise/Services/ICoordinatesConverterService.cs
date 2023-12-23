@@ -1,8 +1,12 @@
-﻿using DTNExercise.Microsoft.MapPoint;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace DTNExercise.Services
 {
-    public static class QuadKeyConverterService
+    public interface ICoordinatesConverterService
     {
         /// <summary>
         /// Converts a point from latitude/longitude WGS-84 coordinates (in degrees)
@@ -13,15 +17,6 @@ namespace DTNExercise.Services
         /// <param name="levelOfDetail">Level of detail, from 1 (lowest detail)  
         /// to 23 (highest detail).</param>
         /// <returns></returns>
-        public static long LatLongToQuadKey(double latitude, double longitude, int levelOfDetail)
-        {
-            int pixelX, pixelY;
-            int tileX, tileY;
-
-            TileSystem.LatLongToPixelXY(latitude, longitude, levelOfDetail, out pixelX, out pixelY);
-            TileSystem.PixelXYToTileXY(pixelX, pixelY, out tileX, out tileY);
-
-            return long.Parse(TileSystem.TileXYToQuadKey(tileX, tileY, levelOfDetail));
-        }
+        long LatLongToQuadKey(double latitude, double longitude, int levelOfDetail);
     }
 }

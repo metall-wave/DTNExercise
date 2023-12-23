@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTNExercise", "DTNExercise\DTNExercise.csproj", "{711B8719-36CC-44F7-8038-BC2DF0DD9D6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTNExercise", "DTNExercise\DTNExercise.csproj", "{711B8719-36CC-44F7-8038-BC2DF0DD9D6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTNExercise.Tests", "DTNExercise.Tests\DTNExercise.Tests.csproj", "{4E65DB11-78D2-49B4-8A51-D0411D72E4B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{711B8719-36CC-44F7-8038-BC2DF0DD9D6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{711B8719-36CC-44F7-8038-BC2DF0DD9D6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{711B8719-36CC-44F7-8038-BC2DF0DD9D6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E65DB11-78D2-49B4-8A51-D0411D72E4B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E65DB11-78D2-49B4-8A51-D0411D72E4B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E65DB11-78D2-49B4-8A51-D0411D72E4B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E65DB11-78D2-49B4-8A51-D0411D72E4B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

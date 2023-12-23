@@ -7,9 +7,13 @@ namespace DTNExercise
     public partial class MainApplicationForm : Form
     {
         Color defaultStatusForeColor;
+        private readonly IResourceManagerService _resourceManager;
+        private readonly ICoordinatesConverterService _coordinatesConverter;
 
         public MainApplicationForm()
         {
+            _resourceManager = new ResourceManagerService();
+            _coordinatesConverter = new CoordinatesConverterService();
             InitializeComponent();
             UpdateInstructionsText();
             SetDefaultStatusForeColor();
@@ -29,17 +33,17 @@ namespace DTNExercise
             try
             {
                 //Parse the lighting entries from the lightning.json into an array
-                Lightning[] lightningEntries = ResourceManager.GetLightningEntries();
+                Lightning[] lightningEntries = _resourceManager.GetLightningEntries();
 
                 //Parse the asset entries from the assets.json into an array
-                Asset[] assetEntries = ResourceManager.GetAssetEntries();
+                Asset[] assetEntries = _resourceManager.GetAssetEntries();
 
                 List<long> previousLightningQuadKeys = new List<long>();
 
                 //Display result list
                 foreach (Lightning lightning in lightningEntries)
                 {
-                    long lightningQuadKey = QuadKeyConverterService.LatLongToQuadKey(lightning.latitude,
+                    long lightningQuadKey = _coordinatesConverter.LatLongToQuadKey(lightning.latitude,
                         lightning.longitude, Constants.DEFAULT_LOD);
 
                     Asset assetWithMatchingQuadKey = assetEntries.FirstOrDefault(a => a.quadKey == lightningQuadKey);
