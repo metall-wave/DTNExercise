@@ -8,15 +8,6 @@ namespace DTNExercise.Services
         private readonly IMyJsonConverterService _jsonConverterService;
         private readonly IFileService _fileService;
 
-        //public ResourceService()
-        //{
-        //    _projectDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
-        //    _projectDirectory = Path.Combine(_projectDirectory, Constants.RESOURCES_FOLDER_NAME);
-
-        //    _jsonConverterService = new MyJsonConverterService();
-        //    _fileService = new FileService();
-        //}
-
         public ResourceService(IFileService fileService, IMyJsonConverterService jsonConverterService)
         {
             _projectDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
