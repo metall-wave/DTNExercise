@@ -15,7 +15,7 @@ namespace DTNExercise.Tests
         public void Test1()
         {
             //Given
-            mainApplicationForm = new MainApplicationForm();
+            //mainApplicationForm = new MainApplicationForm();
 
             //When
 

@@ -1,3 +1,6 @@
+using DTNExercise.Services;
+using Microsoft.Extensions.DependencyInjection;
+
 namespace DTNExercise
 {
     internal static class Program
@@ -11,7 +14,16 @@ namespace DTNExercise
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new MainApplicationForm());
+
+            ServiceCollection services = new ServiceCollection();
+            services.AddTransient<IFileService, FileService>();
+            services.AddTransient<IMyJsonConverterService, MyJsonConverterService>();
+            services.AddTransient<IResourceService, ResourceService>();
+            services.AddTransient<ICoordinatesConverterService, CoordinatesConverterService>();
+
+            using ServiceProvider provider = services.BuildServiceProvider();
+
+            Application.Run(new MainApplicationForm(provider));
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DTNExercise.Services
 {
-    public interface IResourceManagerService
+    public interface IResourceService
     {
         /// <summary>
         /// Parses the assets.json file and returns it's content as an

@@ -1,19 +1,20 @@
 using DTNExercise.Enums;
 using DTNExercise.Models;
 using DTNExercise.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DTNExercise
 {
     public partial class MainApplicationForm : Form
     {
         Color defaultStatusForeColor;
-        private readonly IResourceManagerService _resourceManager;
+        private readonly IResourceService _resourceService;
         private readonly ICoordinatesConverterService _coordinatesConverter;
 
-        public MainApplicationForm()
+        public MainApplicationForm(IServiceProvider serviceProvider)
         {
-            _resourceManager = new ResourceManagerService();
-            _coordinatesConverter = new CoordinatesConverterService();
+            _resourceService = serviceProvider.GetService<IResourceService>();
+            _coordinatesConverter = serviceProvider.GetService<ICoordinatesConverterService>();
             InitializeComponent();
             UpdateInstructionsText();
             SetDefaultStatusForeColor();
@@ -33,10 +34,10 @@ namespace DTNExercise
             try
             {
                 //Parse the lighting entries from the lightning.json into an array
-                Lightning[] lightningEntries = _resourceManager.GetLightningEntries();
+                Lightning[] lightningEntries = _resourceService.GetLightningEntries();
 
                 //Parse the asset entries from the assets.json into an array
-                Asset[] assetEntries = _resourceManager.GetAssetEntries();
+                Asset[] assetEntries = _resourceService.GetAssetEntries();
 
                 List<long> previousLightningQuadKeys = new List<long>();
 
