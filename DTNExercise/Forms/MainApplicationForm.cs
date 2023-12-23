@@ -11,10 +11,10 @@ namespace DTNExercise
         private readonly IResourceService _resourceService;
         private readonly ICoordinatesConverterService _coordinatesConverter;
 
-        public MainApplicationForm(IServiceProvider serviceProvider)
+        public MainApplicationForm(IResourceService resourceService, ICoordinatesConverterService coordinatesConverter)
         {
-            _resourceService = serviceProvider.GetService<IResourceService>();
-            _coordinatesConverter = serviceProvider.GetService<ICoordinatesConverterService>();
+            _resourceService = resourceService;
+            _coordinatesConverter = coordinatesConverter;
             InitializeComponent();
             UpdateInstructionsText();
             SetDefaultStatusForeColor();
@@ -29,7 +29,7 @@ namespace DTNExercise
         /// <summary>
         /// Uses the lightning.json and assets.json to display the report message.
         /// </summary>
-        private void GenerateReportListItems()
+        public void GenerateReportListItems()
         {
             try
             {
@@ -128,6 +128,11 @@ namespace DTNExercise
         private void SetDefaultStatusForeColor()
         {
             defaultStatusForeColor = statusTextBox.ForeColor;
+        }
+
+        public ListBox GetReportListBox()
+        {
+            return reportListBox;
         }
     }
 }

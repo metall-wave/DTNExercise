@@ -23,7 +23,8 @@ namespace DTNExercise
 
             using ServiceProvider provider = services.BuildServiceProvider();
 
-            Application.Run(new MainApplicationForm(provider));
+            Application.Run(new MainApplicationForm(provider.GetService<IResourceService>(),
+                provider.GetService<ICoordinatesConverterService>()));
         }
     }
 }
